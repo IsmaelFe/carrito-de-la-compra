@@ -1,0 +1,32 @@
+main {
+    width: 100%;
+    color: #211614;
+}
+
+ul {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+ul>li {
+    list-style: none;
+    padding: 10px;
+    background-color: #87969f;
+    border-radius: 9px;
+    text-align: center;
+    font-size: 1em;
+}
+
+li>button {
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    background-color: #5c5e6a;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 9px;
+}
