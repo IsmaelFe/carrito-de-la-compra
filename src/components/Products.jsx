@@ -10,6 +10,7 @@ export function Products ({ products }) {
                 <li key={product.id}>
                   <img src={product.thumbnail} alt={product.brand} />
                   <p>{product.description}</p>
+                  <p>${product.price}</p>
                   <button>Agregar al carrito</button>
                 </li>
               )

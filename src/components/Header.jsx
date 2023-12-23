@@ -1,8 +1,12 @@
-export function Header () {
+import { Filters } from './Filters'
+
+export function Header ({ filter, valueFilter }) {
   return (
     <header className='header'>
       <h1>Carrito de la compra</h1>
-      <button>Carrito</button>
+      <div>
+        <Filters filter={filter} valueFilter={valueFilter} />
+      </div>
     </header>
   )
 }

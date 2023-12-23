@@ -1,0 +1,22 @@
+.cart {
+    min-height: 100vh;
+    display: none;
+    background-color: #5c5e6a;
+    width: 30%;
+    z-index: 100;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.icon-cart {
+    background-color: aqua;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.icon-cart~input:checked~.cart {
+    display: inline;
+}
