@@ -3,12 +3,12 @@ import { useState } from 'react'
 export function useFilters () {
   const [filters, setFilters] = useState({
     category: 'all',
-    price: 0
+    price: 1500
   })
 
   const productFilters = (products) => {
     return products.filter(product => {
-      return product.price >= filters.price && (
+      return product.price <= filters.price && (
         filters.category === 'all' ||
         product.category === filters.category
       )

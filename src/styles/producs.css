@@ -1,6 +1,6 @@
 main {
     width: 100%;
-    color: #211614;
+    color: white;
 }
 
 ul {
@@ -12,17 +12,19 @@ ul {
 ul>li {
     list-style: none;
     padding: 10px;
-    background-color: #87969f;
+    background-color: black;
     border-radius: 9px;
     text-align: center;
     font-size: 1em;
 }
 
 li>button {
+    width: 40px;
+    height: 40px;
     border-radius: 5px;
     border: none;
     padding: 7px;
-    background-color: rgb(37, 37, 184);
+    background-color: #4b77be;
     cursor: pointer;
 }
 
