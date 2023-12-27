@@ -1,6 +1,6 @@
 import '../styles/producs.css'
 
-export function Products ({ products }) {
+export function Products ({ products, addProductCart }) {
   return (
     <main>
       <ul>
@@ -11,7 +11,7 @@ export function Products ({ products }) {
                   <img src={product.thumbnail} alt={product.brand} />
                   <p>{product.description}</p>
                   <p>${product.price}</p>
-                  <button>Agregar al carrito</button>
+                  <button onClick={() => addProductCart(product)}>Agregar al carrito</button>
                 </li>
               )
             })

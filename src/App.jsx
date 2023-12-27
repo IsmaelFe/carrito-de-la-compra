@@ -4,30 +4,44 @@ import { products as initialProducts } from './mocks/products.json'
 import './styles/index.css'
 import { Header } from './components/Header'
 import { Cart } from './components/Cart'
+import { useFilters } from './hooks/useFilters'
 
 export function App () {
-  const [products, setProducts] = useState(initialProducts)
-  const [filters, setFilters] = useState({
-    category: 'all',
-    price: 0
-  })
+  const { productFilters, setFilters, filters } = useFilters()
+  const [cart, setCart] = useState([])
 
-  const productFilters = () => {
-    return products.filter(product => {
-      return product.price >= filters.price && (
-        filters.category === 'all' ||
-        product.category === filters.category
-      )
-    })
+  const filterProducts = productFilters(initialProducts)
+
+  const addProductCart = (products) => {
+    const findIndex = [...cart]
+    const index = findIndex.findIndex(product => product.id === products.id)
+
+    if (index >= 0) {
+      const newState = [...cart]
+      newState[index].quantity += 1
+      setCart(newState)
+      return
+    }
+
+    const newCart = [...cart, { ...products, quantity: 1 }]
+    setCart(newCart)
   }
 
-  const filterProducts = productFilters()
+  const empyCart = () => {
+    setCart([])
+  }
+
+  const deleteProductCart = (index) => {
+    let newCart = [...cart]
+    newCart = newCart.filter(product => product.id !== index)
+    setCart(newCart)
+  }
 
   return (
     <div>
       <Header filter={setFilters} valueFilter={filters} />
-      <Cart />
-      <Products products={filterProducts} />
+      <Cart stateCart={cart} deleteCart={empyCart} deleteProductCart={deleteProductCart} />
+      <Products products={filterProducts} addProductCart={addProductCart} />
     </div>
   )
 }

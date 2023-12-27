@@ -8,6 +8,7 @@
     top: 0;
     bottom: 0;
     position: fixed;
+    overflow-y: auto;
 }
 
 .icon-cart {
@@ -15,6 +16,7 @@
     position: absolute;
     right: 20px;
     top: 20px;
+    cursor: pointer;
 }
 
 .icon-cart~input:checked~.cart {
