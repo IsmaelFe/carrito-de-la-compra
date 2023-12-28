@@ -1,6 +1,6 @@
 import '../styles/producs.css'
 
-const addCart = './public/cart-plus-svgrepo-com.svg'
+const addCart = './cart-plus-svgrepo-com.svg'
 
 export function Products ({ products, addProductCart }) {
   return (
