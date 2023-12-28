@@ -39,3 +39,12 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+#prace {
+    background-color: #24252a;
+}
+
+#category {
+    background-color: #24252a;
+    color: white;
+}

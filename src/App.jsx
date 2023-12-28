@@ -7,10 +7,11 @@ import { Cart } from './components/Cart'
 import { useFilters } from './hooks/useFilters'
 
 export function App () {
-  const { productFilters, setFilters, filters } = useFilters()
+  const { productFilters } = useFilters()
+  const [products] = useState(initialProducts)
   const [cart, setCart] = useState([])
 
-  const filterProducts = productFilters(initialProducts)
+  const filterProducts = productFilters(products)
 
   const addProductCart = (products) => {
     const findIndex = [...cart]
@@ -39,7 +40,7 @@ export function App () {
 
   return (
     <div>
-      <Header filter={setFilters} valueFilter={filters} />
+      <Header />
       <Cart stateCart={cart} deleteCart={empyCart} deleteProductCart={deleteProductCart} />
       <Products products={filterProducts} addProductCart={addProductCart} />
     </div>

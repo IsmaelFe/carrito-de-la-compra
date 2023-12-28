@@ -13,7 +13,7 @@ export function Products ({ products, addProductCart }) {
                   <img src={product.thumbnail} alt={product.brand} />
                   <p>{product.description}</p>
                   <p>${product.price}</p>
-                  <button onClick={() => addProductCart(product)}><img src={addCart} /></button>
+                  <button onClick={() => addProductCart(product)}><img src={addCart} alt='carrito para agregar un producto' /></button>
                 </li>
               )
             })

@@ -1,13 +1,18 @@
-export function Filters ({ filter, valueFilter }) {
+import { useContext } from 'react'
+import { FiltersContext } from '../context/filters'
+
+export function Filters () {
+  const { filters, setFilters } = useContext(FiltersContext)
+
   const setPrice = (event) => {
-    filter(prevState => ({
+    setFilters(prevState => ({
       ...prevState,
       price: event.target.value
     }))
   }
 
   const setCategory = (event) => {
-    filter(prevState => ({
+    setFilters(prevState => ({
       ...prevState,
       category: event.target.value
     }))
@@ -17,9 +22,9 @@ export function Filters ({ filter, valueFilter }) {
     <section className='filters'>
       <div>
         <div>
-          <label htmlFor='prace'>Precio: {valueFilter.price}</label>
+          <label htmlFor='prace'>Precio: {filters.price}</label>
         </div>
-        <input id='prace' type='range' min='0' max='1000' onChange={setPrice} value={valueFilter.price} />
+        <input id='prace' type='range' min='0' max='2000' onChange={setPrice} value={filters.price} />
       </div>
 
       <div className='category'>
